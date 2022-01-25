@@ -47,6 +47,12 @@
             display: none;
         }
 
+        .title {
+            font-size: var(--lg);
+            margin-bottom: 36px;
+            text-align: start;
+        }
+
         .label {
             font-size: var(--sm);
             font-weight: bold;
@@ -58,12 +64,9 @@
             flex-direction: column;
         }
 
-        .form a {
-            color: var(--hospital-green);
-            font-size: var(--sm);
-            text-align: center;
-            text-decoration: none;
-            margin-bottom: 52px;
+        .form div {
+            display: flex;
+            flex-direction: column;
         }
 
         .input {
@@ -76,7 +79,9 @@
             margin-bottom: 12px;
         }
 
-        .input-email {
+        .input-name,
+        .input-email,
+        .input-password {
             margin-bottom: 22px;
         }
 
@@ -92,32 +97,20 @@
             height: 50px;
         }
 
-        .secondary-button {
-            background-color: var(--white);
-            border-radius: 8px;
-            border: 1px solid var(--hospital-green);
-            color: var(--hospital-green);
-            width: 100%;
-            cursor: pointer;
-            font-size: var(--md);
-            font-weight: bold;
-            height: 50px;
-        }
-
         .login-button {
             margin-top: 14px;
             margin-bottom: 30px;
         }
 
         @media (max-width: 640px) {
-            .logo {
-                display: block;
+            .form-container {
+                height: 100%;
+                justify-content: space-between;
             }
 
-            .secondary-button {
-                position: absolute;
-                bottom: 20px;
-                width: inherit;
+            .form {
+                height: 100%;
+                justify-content: space-between;
             }
         }
     </style>
@@ -128,25 +121,26 @@
 
     <div class="login">
         <div class="form-container">
-            <!--logo-->
-            <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
+
+            <h1 class="title">My account</h1>
 
             <!--form-->
             <form action="/" class="form">
-                <label for="email" class="label">Email address</label>
-                <input type="email" id="email" placeholder="camilayokoo@gmail.com" class="input input-email">
+                <div>
+                    <label for="name" class="label">Name</label>
+                    <input type="text" id="name" placeholder="Camila Yokoo" class="input input-name">
 
-                <label for="password" class="label">Password</label>
-                <input type="password" id="password" placeholder="*********" class="input input-password">
+                    <label for="email" class="label">Email address</label>
+                    <input type="email" id="email" placeholder="camilayokoo@gmail.com" class="input input-email">
 
-                <!--submit button-->
-                <input type="submit" value="Log in" class="primary-button login-button">
-                <a href="/">Forgot my password</a>
+                    <label for="password" class="label">Password</label>
+                    <input type="password" id="password" placeholder="*********" class="input input-password">
+                </div>
+
+                <!--button-->
+                <input type="submit" value="Create" class="primary-button login-button">
+
             </form>
-
-            <!--sign up-->
-            <button class="secondary-button signup-button">Sign up</button>
-
 
         </div>
     </div>
