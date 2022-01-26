@@ -59,6 +59,12 @@
             margin-bottom: 4px;
         }
 
+        .value {
+            color: var(--very-light-pink);
+            font-size: var(--md);
+            margin: 8px 0px 32px 0px;
+        }
+
         .form {
             display: flex;
             flex-direction: column;
@@ -79,17 +85,13 @@
             margin-bottom: 12px;
         }
 
-        .input-name,
-        .input-email,
-        .input-password {
-            margin-bottom: 22px;
-        }
 
-        .primary-button {
-            background-color: var(--hospital-green);
+
+        .secondary-button {
+            background-color: var(--white);
             border-radius: 8px;
-            border: none;
-            color: var(--white);
+            border: 1px solid var(--hospital-green);
+            color: var(--hospital-green);
             width: 100%;
             cursor: pointer;
             font-size: var(--md);
@@ -105,7 +107,6 @@
         @media (max-width: 640px) {
             .form-container {
                 height: 100%;
-                justify-content: space-between;
             }
 
             .form {
@@ -129,18 +130,18 @@
             <form action="/" class="form">
                 <div>
                     <label for="name" class="label">Name</label>
-                    <input type="text" id="name" placeholder="Camila Yokoo" class="input input-name">
+                    <p class="value">Camila Yokoo</p>
 
                     <label for="email" class="label">Email address</label>
-                    <input type="email" id="email" placeholder="camilayokoo@gmail.com" class="input input-email">
+                    <p class="value">camilayokoo@gmail.com</p>
 
                     <label for="password" class="label">Password</label>
-                    <input type="password" id="password" placeholder="*********" class="input input-password">
+                    <p class="value">*********</p>
                 </div>
 
-                <!--button-->
-                <input type="submit" value="Create" class="primary-button login-button">
 
+                <!--button-->
+                <input type="submit" value="Edit" class="secondary-button login-button">
             </form>
 
         </div>
